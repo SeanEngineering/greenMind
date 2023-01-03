@@ -1,0 +1,15 @@
+@use '../../styles/mixins';
+
+.navbar{
+    @include mixins.flexing(row, space-around, center);
+    width: 100vw;
+    height: 20px;
+    margin-top: 20px;
+    button{
+        @include mixins.flexing(row, center, center);
+        height: 30px;
+        font-size: 15px;
+        text-align: center;
+        text-align: center;
+    }
+}

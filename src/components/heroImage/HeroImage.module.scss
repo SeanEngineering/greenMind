@@ -1,0 +1,19 @@
+@use '../../styles/mixins';
+@use '../../styles/palette';
+
+
+.heroImage{
+    @include mixins.flexing(column, center, center);
+    height: 100%;
+    width: 55%;
+    img{
+        height: auto;
+        max-height: 100%;
+        min-width: 100%;
+        border-radius: 20px;
+        // border-bottom-left-radius: 20px;
+        // border-top-left-radius: 20px;
+    }
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}

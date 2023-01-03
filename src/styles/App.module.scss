@@ -1,0 +1,11 @@
+@use '../styles/mixins';
+@use '../styles/palette';
+
+.main{
+    @include mixins.flexing(column, space-between, center);
+    height: auto;
+    min-height: 100vh;
+    width: 100vw;
+    padding: 0px;
+    margin: 0px;
+}

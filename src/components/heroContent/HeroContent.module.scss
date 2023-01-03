@@ -1,0 +1,19 @@
+@use '../../styles/mixins';
+@use '../../styles/palette';
+
+.content{
+    @include mixins.flexing(column, center, right);
+    width: 45%;
+    padding: 0px;
+    margin: 20px;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    h3 {
+        padding: 0px;
+        margin: 0px;
+        font-style: italic;
+    }
+
+}

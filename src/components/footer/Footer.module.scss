@@ -1,0 +1,10 @@
+@use '../../styles/mixins';
+@use '../../styles/palette';
+
+.footer{
+    @include mixins.flexing(column, center, center);
+    height: 50px;
+    width: 100%;
+    color: white;
+    background-color: palette.$DarkTeal;
+}
