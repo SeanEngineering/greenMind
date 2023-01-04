@@ -3,9 +3,10 @@
 Green Mind is an automated self watering system and is a convenient and efficient way to ensure your plants are properly watered. Using sensors to monitor soil moisture levels, the system automatically dispenses water when needed, saving you time and effort. With user-friendly scheduling features, you can customize watering schedules to suit your specific plant care needs. Never worry about over or under watering again with our automated self watering system.
 
 ## Development
-This application has been developed using a combination of React, TypeScript, Java, and MySQL. 
-On the frontend, React and TypeScript have been used to create a user-friendly interface for interacting with the system.
+This application has been developed using a combination of React, TypeScript, Cloud Firestore, Java, and MySQL. 
+On the frontend, React, TypeScript, and Cloud Firestore have been used to create a user-friendly interface for interacting with the system.
 Users can view the current status of their plants, set watering schedules, and receive notifications when it is time to water their plants.
+Cloud Firestore is used to contain a database of plants.
 
 The backend of the application has been built using Java and MySQL. 
 Java is used to handle the business logic of the application, such as scheduling watering times and sending notifications to the frontend. 
