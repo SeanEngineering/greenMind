@@ -26,13 +26,13 @@ The 3-axis CNC has been modded to house a 12V water pump which will use the same
 
 ## Requirements
 1. Ability to set watering schedules: The application should allow users to specify how often they want their plants to be watered, as well as the duration of each watering session
-2. Plant database: The application should include a database of common plants, with information on each plant's watering needs (e.g. how much water they need, how often they need to be watered).
+2. ✅ 05/01/23 - Plant database: The application should include a database of common plants, with information on each plant's watering needs (e.g. how much water they need, how often they need to be watered).
 3. Moisture sensor integration: The application should be able to integrate with moisture sensors to determine when plants need watering, and adjust watering schedules accordingly.
 4. Watering system control: The application should be able to control the watering system (e.g. turn it on and off, adjust water flow) in order to properly water plants according to their needs.
 5. User notification: The application should notify users when plants have been watered, or if there are any issues with the watering system.
 6. Water usage tracking: The application should track and display information on water usage, so users can monitor their water usage and make any necessary adjustments.
 7. Plant care tips: The application should provide users with plant care tips, such as how to properly fertilize and prune their plants.
-8. Weather integration: The application should be able to access weather data and adjust watering schedules accordingly (e.g. skipping watering on days when it is raining).
+8. ✅ 04/01/23 - Weather integration: The application should be able to access weather data and adjust watering schedules accordingly (e.g. skipping watering on days when it is raining).
 9. Mobile compatibility: The application should be accessible from mobile devices, so users can manage their watering system remotely.
 
 ### This project is currently in development.
