@@ -1,0 +1,10 @@
+@use '../../styles/mixins';
+@use '../../styles/palette';
+
+.circle{
+    font-size: 10px;
+    &__ring{
+        transition: stroke-dashoffset 0.35s;   
+    }
+    
+}

@@ -1,0 +1,57 @@
+@use '../../styles/mixins';
+@use '../../styles/palette';
+
+.control {
+    @include mixins.flexing(column,center,center);
+    height: 100%;
+    width: 45%;
+    margin: 20px;
+    padding: 0px;
+    overflow: hidden;
+    &__stats{
+        &__cat{
+            @include mixins.flexing(row, space-between, center);
+            gap: 10px;
+        }
+    }
+    &__arrows{
+        @include mixins.flexing(column,center,center);
+        gap: 5px;
+        &__item {
+            @include mixins.flexing(row, center, center);
+            gap: 5px;
+            button{
+                height: 50px;
+                width: 50px;
+                &:hover{
+                    scale: 1.1;
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+    &__position{
+        @include mixins.flexing(column,space-around, center);
+        &__coord{
+            @include mixins.flexing(row, center, center);
+            text-align: center;
+            text-justify: center;
+            width: 200px;
+            height: 30px;
+            gap: 20px;
+            padding: 5px;
+            &__dim{
+                @include mixins.flexing(column,center, center);
+                background-color: white;
+                border: 2px solid black;
+                border-radius: 5px;;
+                width: 200px;
+                height: 25px;
+                color: black;
+            }
+        }
+
+    }
+}

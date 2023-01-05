@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import style from './Monitor.module.scss';
-import { getCurrentPosition } from '../../service/weather';
+import { getCurrentPosition, getLocation } from '../../service/weather';
 
 const Monitor = () => {
     const [temperature, setTemperature] = useState([]);
@@ -10,6 +10,7 @@ const Monitor = () => {
         (async () => {
           const position:any = await getCurrentPosition();
           console.log(position.coords.latitude);
+          console.log(await getLocation(position.coords.latitude, position.coords.longitude));
           const temperature = await fetch(
             `https://api.open-meteo.com/v1/forecast?latitude=${
               Math.round(position.coords.latitude * 100) / 100
@@ -36,7 +37,7 @@ const Monitor = () => {
         <div className={style.monitor}>
             <h1>Monitor</h1>
             <h3>Location</h3>
-            <h3>{temperature.current_weather ? `The temperature is ${temperature.current_weather.temperature}°C`: 'getting location data...'}</h3>
+            <h3>{temperature.current_weather ? `The temperature is ${temperature.current_weather.temperature}°C`: 'Getting temperature data...'}</h3>
             <h3>Water Supply</h3>
             <h3>Humidity</h3>
             <h3>Soil Moisture</h3>

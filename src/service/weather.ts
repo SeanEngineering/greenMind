@@ -8,3 +8,11 @@ export const getCurrentPosition = () => {
         );
     });
 };
+
+export const getLocation = async (latitude: number, longitude: number) => {
+    const dataPacket =
+        await fetch(`https://maps.googleapis.com/maps/api/geocode/json?
+      latlng=${latitude},${longitude}&key={GOOGLE_MAP_KEY}`);
+    const data = await dataPacket.json();
+    return data;
+};

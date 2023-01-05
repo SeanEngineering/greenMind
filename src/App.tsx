@@ -10,11 +10,12 @@ import HeroImage from './components/heroImage/HeroImage';
 import HeroContent from './components/heroContent/HeroContent';
 import Monitor from './components/monitor/Monitor';
 import PlantList from './components/plantList/PlantList';
+import Control from './components/control/Control';
 
 
 function App() {
   const [count, setCount] = useState(0)
-  const navTitles: Array<string> = ['home', 'schedules', 'monitor', 'plants', 'notifications', 'usage']
+  const navTitles: Array<string> = ['home', 'schedules', 'monitor', 'plants', 'notifications', 'usage', 'control']
 
   return (
     <BrowserRouter>
@@ -45,6 +46,11 @@ function App() {
           <HeroImage />
           <HeroImage />
         </Hero>} />
+        <Route path="/control" element={<Hero>
+            <HeroImage />
+            <Control />
+          </Hero>}
+        />
       </Routes>
       <Footer />
     </div>
