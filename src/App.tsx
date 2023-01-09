@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import style from './styles/App.module.scss';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import { home, position } from './service/control';
 
 //Components
 import Nav from './components/nav/Nav'
@@ -11,10 +12,12 @@ import HeroContent from './components/heroContent/HeroContent';
 import Monitor from './components/monitor/Monitor';
 import PlantList from './components/plantList/PlantList';
 import Control from './components/control/Control';
+import NcGrid from './components/ncGrid/NcGrid';
 
 
 function App() {
   const [count, setCount] = useState(0)
+  const [graphPosition, setGraphPosition] = useState<position>(home)
   const navTitles: Array<string> = ['home', 'schedules', 'monitor', 'plants', 'notifications', 'usage', 'control']
 
   return (
@@ -47,8 +50,8 @@ function App() {
           <HeroImage />
         </Hero>} />
         <Route path="/control" element={<Hero>
-            <HeroImage />
-            <Control />
+            <NcGrid relPosition={graphPosition}/>
+            <Control setGraphPosition={setGraphPosition}/>
           </Hero>}
         />
       </Routes>
