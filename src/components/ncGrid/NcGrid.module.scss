@@ -7,6 +7,8 @@
     width: 350px;
     background-color: white;
     border: 10px solid white;
+    border-radius: 5px;
+   
     &__point{
         position:relative;
         left: 0px;
@@ -17,7 +19,35 @@
         width: 10px;
         background-color: black;
         color: black;
+        z-index: 5;
     }
+}
 
-
+.box{
+    &__gridSection{
+        @include mixins.flexing(row, start, end);
+        &__position{
+            @include mixins.flexing(row, center, center);
+            position: relative;
+            width: 33.33%;
+            height: 100%;
+            z-index: 1;
+            &__1{
+                left: 0px;
+                bottom: 0px;
+                background-color: red;
+            }
+            &__2{
+                background-color: blue;
+    
+            }
+            &__3{
+                background-color: green;
+            }
+    
+        }
+        
+    }
+    
+    
 }

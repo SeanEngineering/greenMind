@@ -9,8 +9,15 @@
     padding: 0px;
     overflow: hidden;
     &__stats{
+        background-color: red;
+        padding: 10px;
+        border-radius: 10px;
         &__cat{
             @include mixins.flexing(row, space-between, center);
+            width: 70%;
+            background-color: black;
+            padding: 5px;
+            border-radius: 10px;
             gap: 10px;
         }
     }
@@ -34,14 +41,19 @@
     }
     &__position{
         @include mixins.flexing(column,space-around, center);
+        background-color: black;
+        border-radius: 10px;
+        padding: 10px;
+        gap: 5px;
+        h2{
+            margin: 0px;
+        }
         &__coord{
             @include mixins.flexing(row, center, center);
             text-align: center;
             text-justify: center;
             width: 200px;
             height: 30px;
-            gap: 20px;
-            padding: 5px;
             &__dim{
                 @include mixins.flexing(column,center, center);
                 background-color: white;
@@ -50,6 +62,7 @@
                 width: 200px;
                 height: 25px;
                 color: black;
+                padding: 5px;
             }
         }
 

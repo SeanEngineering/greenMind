@@ -1,0 +1,8 @@
+@use '../../styles/mixins';
+@use '../../styles/palette';
+
+.placeList{
+    @include mixins.flexing(row, center, center);
+    gap: 10px;
+    margin: 10px;
+}

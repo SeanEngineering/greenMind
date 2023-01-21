@@ -27,8 +27,10 @@ const ProgressRing: React.FC<Props> = ({ radius, stroke, progress, colour }) => 
         cy={radius}
       />
       <text
+       className={style.text}
         x="50%"
         y="50%"
+        color='white'
         dominantBaseline="middle"
         textAnchor="middle"
       >

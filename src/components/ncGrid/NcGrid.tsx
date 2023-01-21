@@ -17,9 +17,17 @@ const NcGrid:React.FunctionComponent<NcGridProps> = ({relPosition}) => {
     },[relPosition]);
     
     return (
-        <div id='homeGrid' className={style.grid}> 
-            <div className={style.grid__point} style={{left: `${xGraph}px`, bottom: `${-yGraph}px`}}></div>
+        <div className={style.box}>
+            <div id='homeGrid' className={style.grid}> 
+                <div className={style.grid__point} style={{left: `${xGraph}px`, bottom: `${-yGraph}px`}}></div>
+            </div>
+            <div className={style.box__gridSection}>
+                <div className={[style.box__gridSection__position__1, style.box__gridSection__position].join(" ")}>1</div>
+                <div className={[style.box__gridSection__position__2, style.box__gridSection__position].join(" ")}>2</div>
+                <div className={[style.box__gridSection__position__3, style.box__gridSection__position].join(" ")}>3</div>
+            </div>
         </div>
+        
     );
 };
 

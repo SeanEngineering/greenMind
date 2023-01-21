@@ -3,6 +3,8 @@ import ProgressRing from '../progressRing/ProgressRing';
 import style from './Control.module.scss';
 import { moveBy, getPosition, position, forward, backward, left, right, setZeroPosition } from '../../service/control';
 import { dayName, amOrPm } from '../../service/calendar';
+import { getPlantPlaces, plantPlace } from '../../service/plants';
+import PlaceList from '../placeList/PlaceList';
 
 interface ControlPros {
     setGraphPosition: Dispatch<SetStateAction<position>>;
@@ -13,6 +15,7 @@ const Control: React.FunctionComponent<ControlPros> = ({setGraphPosition}) => {
     const [checkState, setCheckState] = useState(false);
     const [todayName, setTodayName] = useState<string>('');
     const [isAfternoon, setIsAfternoon] = useState<string>('');
+    const [placeList, setPlaceList] = useState<Array<any> | null>([]);
 
     useEffect(() => {
         let time: Date = new Date();
@@ -32,6 +35,20 @@ const Control: React.FunctionComponent<ControlPros> = ({setGraphPosition}) => {
             };
         })();
     }, [checkState]);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                console.log('attempting to get places')
+                const places = await getPlantPlaces();
+                console.log("successfully received positions")
+                setPlaceList(places);
+            } catch (e) {
+                console.log("failed to get places")
+                console.log(e);
+            }
+        })();
+    },[])
 
     const progress = (direction: position) => {
         moveBy(direction, 2);
@@ -63,21 +80,17 @@ const Control: React.FunctionComponent<ControlPros> = ({setGraphPosition}) => {
     
     return (
         <div className={style.control}>
-            <div className={style.control__stats}>
-                <h1>{isAfternoon == 'am' ? 'Good morning' : 'Good afternoon'}</h1>
+            <h1>{isAfternoon == 'am' ? 'Good morning' : 'Good afternoon'}</h1>
                 <h2>Today is {todayName}</h2>
-                <h3 className={style.control__stats__cat}>Water Level <ProgressRing radius={20} stroke={2} progress={99} colour={"#005F60"}/></h3>
-                <h3 className={style.control__stats__cat}>Moisture Level <ProgressRing radius={20} stroke={2} progress={10} colour={"#333"}/></h3>
-                <h3 className={style.control__stats__cat}>Light Intensity <ProgressRing radius={20} stroke={2} progress={10} colour={"#FAAB36"}/></h3>
-            </div>
+                <PlaceList placeList={placeList} />
             <div className={style.control__position}>
                 <h2>Position</h2> 
                 <label className={style.control__position__coord}>X</label>
-                <input id='x' type='text' className={style.control__position__coord__dim} value={localPosition.x.toString()}/>
+                <input id='x' type='text' className={style.control__position__coord__dim} defaultValue={localPosition.x.toString()}/>
                 <label className={style.control__position__coord}>Y</label>
-                <input id='y' type='text' className={style.control__position__coord__dim} value={localPosition.y.toString()}/>
+                <input id='y' type='text' className={style.control__position__coord__dim} defaultValue={localPosition.y.toString()}/>
                 <label className={style.control__position__coord}>Z</label>
-                <input id='z' type='text' className={style.control__position__coord__dim} value={localPosition.z.toString()}/>
+                <input id='z' type='text' className={style.control__position__coord__dim} defaultValue={localPosition.z.toString()}/>
                 <button onSubmit={(e) => {}}>Update Position</button>
                 <button onClick={() => {setZeroPosition(2)}}>Set 0 Position</button>
             </div>
