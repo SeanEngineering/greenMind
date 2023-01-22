@@ -27,14 +27,16 @@ Overall, this application aims to make plant care easy and convenient for users,
 The 3-axis CNC has been modded to house a 12V water pump which will use the same power supply as the 3-axis controller. This can be purchased here: https://ja.aliexpress.com/item/1005003912562799.html?spm=a2g0o.productlist.0.0.1e1a44dcnvRoau&algo_pvid=ba56a90c-3ae0-40fc-b52f-9c15aa6d02ca&algo_exp_id=ba56a90c-3ae0-40fc-b52f-9c15aa6d02ca-12&pdp_ext_f=%7B%22sku_id%22%3A%2212000027452471764%22%7D&pdp_npi=2%40dis%21AUD%21120.43%2173.46%21%21%21%21%21%40210318cb16704489692995261e8f80%2112000027452471764%21sea&curPageLogUid=5wkP4Evp3HCh
 
 ## Requirements
-1. Ability to set watering schedules: The application should allow users to specify how often they want their plants to be watered, as well as the duration of each watering session
+1. TODO - Ability to set watering schedules: The application should allow users to specify how often they want their plants to be watered, as well as the duration of each watering session
 2. ✅ 05/01/23 - Plant database: The application should include a database of common plants, with information on each plant's watering needs (e.g. how much water they need, how often they need to be watered).
-3. Moisture sensor integration: The application should be able to integrate with moisture sensors to determine when plants need watering, and adjust watering schedules accordingly.
+3. TODO - Moisture sensor integration: The application should be able to integrate with moisture sensors to determine when plants need watering, and adjust watering schedules accordingly.
 4. ✅ 09/01/23 Watering system control: The application should be able to control the watering system (e.g. turn it on and off, adjust water flow) in order to properly water plants according to their needs.
-5. User notification: The application should notify users when plants have been watered, or if there are any issues with the watering system.
-6. ✅ 06/01/23 Water usage tracking: The application should track and display information on water usage, so users can monitor their water usage and make any necessary adjustments.
-7. Plant care tips: The application should provide users with plant care tips, such as how to properly fertilize and prune their plants.
-8. ✅ 04/01/23 - Weather integration: The application should be able to access weather data and adjust watering schedules accordingly (e.g. skipping watering on days when it is raining).
-9. Mobile compatibility: The application should be accessible from mobile devices, so users can manage their watering system remotely.
+5. ✅ 06/01/23 Water usage tracking: The application should track and display information on water usage, so users can monitor their water usage and make any necessary adjustments.
+6. ✅ 023/01/23 - Plant care tips: The application should provide users with plant care tips, such as how to properly fertilize and prune their plants.
+7. ✅ 04/01/23 - Weather integration: The application should be able to access weather data and adjust watering schedules accordingly (e.g. skipping watering on days when it is raining).
+
+## Additional
+- User notification: The application should notify users when plants have been watered, or if there are any issues with the watering system.
+- Mobile compatibility: The application should be accessible from mobile devices, so users can manage their watering system remotely.
 
 ### This project is currently in development.
